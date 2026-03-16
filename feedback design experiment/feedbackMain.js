@@ -13,18 +13,24 @@ dialogClose.addEventListener("click", () => {
 const synth = new Tone.Synth().toDestination();
 
 // play sound with tone
-function playNote() {
-  synth.triggerAttackRelease("C4, 8n");
-}
+// function playNote() {
+//   synth.triggerAttackRelease("C4, 8n");
+// }
 
 // playButton.addEventListener("click", playNote);
 
 function startNote() {
   synth.triggerAttackRelease("C4");
+  document.body.classList.add("animation");
+  // synth.triggerAttackRelease("E4", now + 1);
+  // synth.triggerAttackRelease("G4", now + 2);
+
+  // document.body.style.backgroundColor = "blue";
 }
 
 function endNote() {
   synth.triggerRelease();
+  document.body.classList.remove("animation");
 }
 
 playButton.addEventListener("mousedown", startNote);
