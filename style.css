@@ -2,6 +2,8 @@ body {
   font-family: "Lexend", sans-serif;
   display: flex;
   padding: 10px;
+  padding-left: 200px;
+  padding-right: 200px;
   background-color: rgb(255, 230, 212);
   color: rgb(129, 19, 0);
 }
