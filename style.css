@@ -1,13 +1,17 @@
 body {
-  font-family: Helvetica, sans-serif;
+  font-family: "Lexend", sans-serif;
   display: flex;
+  padding: 10px;
+  background-color: rgb(255, 230, 212);
+  color: rgb(129, 19, 0);
 }
 
 h1 {
-  font-family: "Rubik Iso", system-ui;
+  font-family: "Potta One", system-ui;
   font-weight: 400;
   font-style: normal;
   font-size: 2.5rem;
+  color: black;
 }
 
 h3 {
@@ -17,6 +21,18 @@ h3 {
 .border {
   border: 3px, dashed, black;
   padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
   width: fit-content;
   margin: 0 auto;
+
+  border-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAqCAYAAADFw8lbAAABD0lEQVR4AeyVQQ6DMAwEae/8/6E8oNUehoMhxAlGkJBK1hJsr5xJFb5T8G+e558i2HYKHzR6QPzWQUUhIjCO8JIHfuugvHiqbgZdluVzJtjoGQ/14oNuBiXxNB2DRp/IIHobUd1pnmBAT61qqM9pv0evO+4oIHNUoxx1Xu2XaI6AaClydaX59xItJeWtH0S9pLx17RDV10HBzvS8FzbPulTxpo+1VZtvh6juPAU70PNe2DzrUsWbPtZWbb4dokye0dvTg2j0EbyXKPfhIOolALGU4pPK8546r/b3H7VfjtQaQqm8fU99Tvsjmtvx1flBNJpwu0S552oVkrX99OGDtkfU3m+1awjU9ts+/Joh+gcAAP//7oHsUQAAAAZJREFUAwBVfPqwMmi/cQAAAABJRU5ErkJggg==")
+    14 / 14px / 0 round;
+  border-width: 14px;
+  border-style: solid;
 }
+
+a:link {
+  color: rgb(170, 127, 255);
+}
+a:;

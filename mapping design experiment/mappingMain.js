@@ -1,11 +1,21 @@
 // find our element
-const stageContainer = document.getElementById("stage-container");
+let stageContainer = document.getElementById("stage-container");
 const circleButton = document.getElementById("circle-button");
+let dateColor = document.getElementById("date-color");
 
-// find stage container dimensions dynamically when window is loaded and resized
+// find stage container size
 let stageContainerWidth = stageContainer.offsetWidth;
-let stageContainerHeight = stageContainer.offsetHeight;
-let circleColor = "red";
+const stageContainerHeight = stageContainer.offsetHeight;
+let circleColor = "black";
+
+dateColor.addEventListener("change", () => {
+  // when date is changed change the circle colour
+  circleColor =
+    // changes circle colour to an hsl
+    `hsl(${(dateColor.value.slice(5, 7) - 1) * 30}, 
+  ${dateColor.value.slice(0, 4) - 1925}%, 
+  ${(parseInt(dateColor.value.slice(8, 10)) + 9) * 2}%)`;
+});
 
 // create a stage
 const stage = new Konva.Stage({
@@ -30,6 +40,7 @@ function drawNewCircle() {
   firstLayer.add(circle);
   circle.draggable("true");
 
+  // add the circle dragging mechanism
   circle.on("mouseenter", function () {
     stage.container().style.cursor = "pointer";
   });
@@ -45,18 +56,3 @@ function drawNewCircle() {
 }
 
 circleButton.addEventListener("click", drawNewCircle);
-
-circle.draggable("true");
-
-// circle.on("mouseenter", function () {
-//   stage.container().style.cursor = "pointer";
-// });
-// circle.on("mouseleave", function () {
-//   stage.container().style.cursor = "default";
-// });
-// circle.on("mousedown", function () {
-//   stage.container().style.cursor = "grab";
-// });
-// circle.on("mouseup", function () {
-//   stage.container().style.cursor = "pointer";
-// });
