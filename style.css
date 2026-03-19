@@ -33,6 +33,16 @@ h3 {
 }
 
 a:link {
-  color: rgb(170, 127, 255);
+  color: rgb(66, 151, 255);
 }
-a:;
+a:visited {
+  color: rgb(173, 115, 255);
+}
+
+a:hover {
+  color: rgb(255, 85, 176);
+}
+
+a:active {
+  color: rgb(255, 165, 213);
+}
