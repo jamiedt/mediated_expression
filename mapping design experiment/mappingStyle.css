@@ -4,7 +4,8 @@ main {
   height: 100vh;
 }
 
+/* created a black background too let the colours pop */
 .stageContainer {
   flex: 1;
-  background-color: mediumslateblue;
+  background-color: rgb(0, 0, 0);
 }
