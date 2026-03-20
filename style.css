@@ -2,8 +2,10 @@ body {
   font-family: "Lexend", sans-serif;
   display: flex;
   padding: 10px;
+  /* adjust padding so that the text has some spacing between the edges of the screen */
   padding-left: 200px;
   padding-right: 200px;
+  /* gone for a vintage colour palette for fun */
   background-color: rgb(255, 230, 212);
   color: rgb(129, 19, 0);
 }
@@ -27,13 +29,14 @@ h3 {
   padding-right: 20px;
   width: fit-content;
   margin: 0 auto;
-
+  /* created the border using the expressive software provided to us "broider" */
   border-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAqCAYAAADFw8lbAAABD0lEQVR4AeyVQQ6DMAwEae/8/6E8oNUehoMhxAlGkJBK1hJsr5xJFb5T8G+e558i2HYKHzR6QPzWQUUhIjCO8JIHfuugvHiqbgZdluVzJtjoGQ/14oNuBiXxNB2DRp/IIHobUd1pnmBAT61qqM9pv0evO+4oIHNUoxx1Xu2XaI6AaClydaX59xItJeWtH0S9pLx17RDV10HBzvS8FzbPulTxpo+1VZtvh6juPAU70PNe2DzrUsWbPtZWbb4dokye0dvTg2j0EbyXKPfhIOolALGU4pPK8546r/b3H7VfjtQaQqm8fU99Tvsjmtvx1flBNJpwu0S552oVkrX99OGDtkfU3m+1awjU9ts+/Joh+gcAAP//7oHsUQAAAAZJREFUAwBVfPqwMmi/cQAAAABJRU5ErkJggg==")
     14 / 14px / 0 round;
   border-width: 14px;
   border-style: solid;
 }
 
+/* created slight variations on the link colours to go with the more laid back vibe of the theme but keeping similar colour conventions so that the user is not confused */
 a:link {
   color: rgb(66, 151, 255);
 }
