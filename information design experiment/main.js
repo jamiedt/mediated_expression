@@ -5,6 +5,7 @@ const rangeSlider1 = document.getElementById("var1Range");
 const rangeSlider2 = document.getElementById("var2Range");
 const rangeSlider3 = document.getElementById("var3Range");
 const rangeSlider4 = document.getElementById("var4Range");
+// find the colour variables in root
 const root = document.documentElement;
 
 //// UI INIT
@@ -77,6 +78,7 @@ rangeSlider1.value = range1DefaultValue;
 // add eventListener for use changing value
 rangeSlider1.addEventListener("input", () => {
   setVolume(rangeSlider1.value);
+  // sets the colour to the value of the sliders in their respective rgb colours (after changing the values of the sliders to be numbers between 0-255)
   root.style.setProperty(
     "--col03",
     `rgb(${parseInt((parseInt(rangeSlider3.value) - 1) * 2.27272727273)},${(parseInt(rangeSlider2.value) - 1) * 9.375},${(parseInt(rangeSlider1.value) + 48) * 5.3125})`,
@@ -93,6 +95,7 @@ rangeSlider2.value = range2DefaultValue;
 // of this exercise, leaving them 'uncommented' is appropriate as I want you to
 // concentrate on your interpretation rather than how they actually operate
 rangeSlider2.addEventListener("input", () => {
+  // sets the colour to the value of the sliders in their respective rgb colours (after changing the values of the sliders to be numbers between 0-255)
   root.style.setProperty(
     "--col03",
     `rgb(${parseInt((parseInt(rangeSlider3.value) - 1) * 2.27272727273)},${(parseInt(rangeSlider2.value) - 1) * 9.375},${(parseInt(rangeSlider1.value) + 48) * 5.3125})`,
@@ -117,6 +120,7 @@ rangeSlider2.dispatchEvent(new Event("input"));
 rangeSlider3.value = range3DefaultValue;
 // add eventListener for use changing value
 rangeSlider3.addEventListener("input", () => {
+  // sets the colour to the value of the sliders in their respective rgb colours (after changing the values of the sliders to be numbers between 0-255)
   root.style.setProperty(
     "--col03",
     `rgb(${parseInt((parseInt(rangeSlider3.value) - 1) * 2.27272727273)},${(parseInt(rangeSlider2.value) - 1) * 9.375},${(parseInt(rangeSlider1.value) + 48) * 5.3125})`,
@@ -149,7 +153,12 @@ function clamp(value, min, max) {
   return Math.min(Math.max(value, min), max);
 }
 
-// giving the sliders some colours
+// giving the sliders some colours that match their rgb values
 rangeSlider1.style.accentColor = "blue";
 rangeSlider2.style.accentColor = "green";
 rangeSlider3.style.accentColor = "red";
+
+// i thought it would be cool if i could figure out a way for the sliders to change the colour of the piano
+// i managed to use maths skills and event listeners to achieve this by changing the colour varables
+// i like this design as every single different colour will ultimately produce a different sound
+// giving users the freedom t play around and see how their sound changes depending on the colours they choose

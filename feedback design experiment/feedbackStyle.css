@@ -2,6 +2,7 @@
   width: 100px;
   border-radius: 50px;
   height: 100px;
+  /* added a transition thqat eases in and out so that all my changes act smoothly and make the feedback feel polished */
   transition: 200ms ease-in-out;
   border-width: 0;
   border-color: white;
@@ -10,12 +11,14 @@
   background-color: #5e77e3;
 }
 
+/* button changes colour when hovered and gets bigger */
 #play-button:hover {
   background-color: rgb(24, 23, 86);
   transform: scale(1.2);
   cursor: pointer;
 }
 
+/* white circle around button shows when clicked */
 #play-button:active {
   border-width: 5px;
   border-color: white;
@@ -33,6 +36,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* created an animation for when the button is pressed that cycles through a few colours */
 @keyframes myAnimation {
   0% {
     background-color: #36408a;
@@ -54,6 +58,7 @@ body {
   }
 }
 
+/* creating the animation class to add onto the button when it is clicked in javascript */
 .animation {
   animation-name: myAnimation;
   animation-duration: 5s;
