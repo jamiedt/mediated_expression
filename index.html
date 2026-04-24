@@ -138,6 +138,229 @@
           create something that aligns with that.
         </p>
       </section>
+      <br />
+      <section>
+        <h3>Design Development and Prototyping:</h3>
+        <h4>Conceptual Research</h4>
+        <p>
+          After receiving feedback for Assignment 1 and through talking with
+          peers, my concept for my project has slightly shifted. My original
+          proposal was to create a game like website that challenges users in a
+          logical way to merge shapes together to create a certain colour but
+          after discussing this approach with Patrick, we decided that there
+          wasn’t enough expressivity in the idea and I decided to change my
+          concept.
+        </p>
+        <p>
+          While merging shapes will still be a main feature, my creative context
+          has shifted to instead use this interaction as a way to allow users to
+          explore and create an artwork. Focusing heavily on the interaction
+          design principle of mapping, my concept allows for users to create,
+          move, and merge circles in a digital scene which gets translated into
+          a realised artwork on a separate digital canvas. This allows for the
+          user to have more freedom with the tool and use it and explore it in a
+          way to better express their creativity.
+        </p>
+        <p>
+          I presented this concept in my prototype by creating a website that
+          could spawn circles and allow users to merge them together. These
+          circles could be spawned by the user as one of three colours (red,
+          green, blue) and merged to create a new circle with a new colour as a
+          mix of the merged colours. After merging, the mapping and expressive
+          elements come together with the user being able to show the unique
+          artwork they had created as a result of their merges.
+        </p>
+        <h4>Technical Research</h4>
+        <p>
+          For my technical approach, I knew that I wanted to use Konva.js to
+          create the shape and merge functions. We experimented with it in class
+          and I enjoyed using the framework and was interested in furthering my
+          understanding with its many features. As a base, I used the mapping
+          experiment we had already made in class to start working on my
+          project.
+        </p>
+        <p>
+          The main challenge I found I was going to have was creating the
+          collision mechanism for the circles on the page. At first I tried
+          using Konva’s tutorials on their website, specifically their
+          <a
+            href="https://konvajs.org/docs/sandbox/Collision_Detection.html"
+            target="blank"
+            >collision detection demo</a
+          >. While the code did end up working, the issue I had was that the
+          collision detection system used rectangles to calculate rather than
+          circles which at first I thought wouldn’t be an issue, but after
+          testing I found that it felt clunky and incohesive. After doing some
+          research online though, I found a common solution on how to know if
+          two circles are colliding. By using Pythagoras’ theorem to find the
+          distance between the centre of two circles, I could detect whether
+          they were colliding by determining whether the distance between them
+          was less than their radii added together. Here is the before and after
+          of that code:
+        </p>
+        <p>Before: <img src="img/favicon/rectangle.png" alt="" /></p>
+        <p>After: <img src="img/favicon/circle.png" alt="" /></p>
+        <p>
+          The merge logic builds on this code by calling this function every
+          time a circle is dragged for every single circle that is on the
+          screen. If the collision function comes back as true, the intersecting
+          circles have a stroke added to them to visually show the user that
+          they are mergeable. When the circle is dropped, if there are colliding
+          circles the merge functions will run. Essentially this prompts a bunch
+          of math calculations to figure out the average position and colour of
+          the circles along with the added size.
+        </p>
+        <p>
+          Some other features I included in my prototype were the animations of
+          the circles for which I used Konva’s built in tween animation system
+          that I learned from
+          <a
+            href="https://konvajs.org/docs/tweens/All_Controls.html"
+            target="blank"
+            >this tutorial</a
+          >, and also the show artwork feature that I created by simply building
+          a new, invisible layer that saves a copy of all the merged circles
+          that can later be presented to the user.
+        </p>
+        <h4>
+          <a href="https://jamietalldms3prototype.netlify.app/" target="blank"
+            >Project Prototype</a
+          ><br /><a
+            href="https://forms.office.com/Pages/ResponsePage.aspx?id=cTYy0b7NF0S01L2yS1Exaz1ZPLDFZmpDngI4vfaaccVUODZIWlFUVTlLUkpJSDRFNVVBWENZVlhUSS4u"
+            target="blank"
+            >Peer User Testing Form</a
+          >
+        </h4>
+        <h4>Peer User Testing Feedback</h4>
+        <p>
+          My peer user testing form consisted of 4 main questions to gain
+          insight on how the user interacted with my prototype. The form
+          collected a total of 15 responses.
+        </p>
+        <p class="italic">
+          1. Was it clear how the tool could be used or did it take some
+          exploration to figure out? Furthermore do you think instructions are
+          necessary?
+        </p>
+        <p>
+          Only 1/5 of testers thought that the tool was easy to figure out with
+          most stating that it took them a while to discover how the drag
+          function and show artwork function worked. A majority believed that
+          instructions are necessary for the website although there was also
+          feedback that the exploration process was fun. From this I have
+          gathered that there is a little too much confusion surrounding some of
+          the functions of the site and that some sort of additional help will
+          need to be added to aid users in getting to know the program. My idea
+          is to implement some sort of tutorial that users can click through
+          that explains how to drag the circles and create the artwork. I would
+          however like to make this optional or able to be skipped as there was
+          that positive feedback about the exploration, so I don’t want to take
+          that aspect away for everyone. I will also look into better feedback
+          for some of the functions for example, the circles glowing when
+          hovered or the show artwork button lighting up only once a merge has
+          been completed. This feedback should be easy to implement but the
+          tutorial might take a little longer to code and will need to be styled
+          correctly when I start to polish the looks of the site, so it is
+          important that I am deliberate with its execution.
+        </p>
+        <p class="italic">
+          2. Were you able to express yourself differently each time you used
+          the tool or did it feel repetitive and why?
+        </p>
+        <p>
+          There was a common opinion from the testers that the tool felt too
+          repetitive and for a few different reasons. There was critique on the
+          limited choice of colours and shapes, the colour merging effect being
+          not strong enough, and the circles becoming too large to quickly. The
+          responses lead me to believe that the tool needs to have more options
+          for expression and needs an ironing out for how some of the merge
+          functions are calculated. For this I have come up with the following
+          solutions:
+        </p>
+        <ul>
+          <li>
+            Add a random colour button that creates a circle of a random colour
+          </li>
+          <li>Add a black and white circle colour button</li>
+          <li>Add the option to change the shapes</li>
+          <li>
+            Create different options for colour merging e.g. screen or multiply
+          </li>
+          <li>
+            Make circle merge size be dependent on area rather than radius
+          </li>
+        </ul>
+        <p>
+          With these changes though there are some things to consider. For the
+          random colour I would ideally make it have only a certain amount of
+          uses to stop the user from just cycling through colours to get the one
+          they want rather than using the merge function. The option to change
+          shapes would be tricky to implement as I would need to go back and
+          change collision and shape properties for all my functions. I also
+          feel that changing the shape while adding a bit of variance, doesn’t
+          fix these other core issues so for these reasons it will be last
+          priority on my list of things to add. For the colour merging options,
+          the current averaging method I am using makes the merging feel dull
+          and restricted. My idea though is to give the user choices as to which
+          method they want to use, maybe using a toggle, to make the tool less
+          repetitive as users can use these combinations of methods to create a
+          wider range of colours.
+        </p>
+        <p class="italic">
+          3. Try to create the most colourful artwork you can. Was it easy or
+          did you sturggle? (Explain why)
+        </p>
+        <p>
+          This question gathered very similar responses to the last, with the
+          main crossover and emphasis being on the issue of the circles becoming
+          too large and the colours and colour merging not allowing for enough
+          variance. This proves to me the importance of implementing the above
+          changes to do with colour and size and will be a main priority for me
+          going ahead.
+        </p>
+        <p class="italic">
+          4. Are there any features you would like to see added to the tool? Or
+          could any existing features be improved?
+        </p>
+        <p>
+          The most requested feature was to add sound effects to the tool when
+          merging. This was something that I had thought of previously but is
+          now at the front of my mind of things to implement. Using Tone.js I
+          will try to add sound effects to make the website feel more polished
+          and attractive to use. A few people also mentioned they would like to
+          see the original circles before the merge be included in the final
+          artwork. This is a feasible idea that I believe will help the tool to
+          be more exciting and produce better results. There were a couple
+          suggestions to add a colour wheel that users could use to spawn in
+          circles of any colour but I believe this would take away from the
+          experimental merging aspect and make the process too streamlined. An
+          outlier response I received was to make the size of the circle effect
+          how much each colour effected the merge. This idea is very interesting
+          and feels like it would be a very intuitive change, but I am not sure
+          whether it would actually create enough of a difference. If I have
+          time, I will definitely consider experimenting with this to see if it
+          can improve the merging cohesion.
+        </p>
+        <h4>Project Timeline</h4>
+        <p>
+          Up until now my project timeline has run pretty smoothly. I had my
+          project conceptualisation completed and submitted on time. After
+          discussions with Patrick and my peer review group my concept had
+          slightly changed after the speculation, but I was able to keep up to
+          date with my code and work through these challenges. My prototype and
+          peer user testing form were both completed for our class in week 7 and
+          I was able to gain and give valuable information about mine and my
+          peers’ prototypes. Assignment 2 is on track to be submitted by the
+          deadline also.
+        </p>
+        <p>
+          Moving forward I will aim to implement the changes talked about above
+          consistently over the next few weeks. My goal is to focus on one of
+          the implementations between each of our classes and use one week at
+          the end before assignment 3 to polish and clean up the final design of
+          the website.
+        </p>
+      </section>
     </main>
   </body>
 </html>

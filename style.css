@@ -3,8 +3,8 @@ body {
   display: flex;
   padding: 10px;
   /* adjust padding so that the text has some spacing between the edges of the screen */
-  padding-left: 200px;
-  padding-right: 200px;
+  padding-left: 150px;
+  padding-right: 150px;
   /* gone for a vintage colour palette for fun */
   background-color: rgb(255, 230, 212);
   color: rgb(129, 19, 0);
@@ -50,4 +50,8 @@ a:hover {
 
 a:active {
   color: rgb(255, 165, 213);
+}
+
+.italic {
+  font-style: italic;
 }
