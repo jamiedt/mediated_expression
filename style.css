@@ -55,3 +55,12 @@ a:active {
 .italic {
   font-style: italic;
 }
+
+#final-project-link {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+#final-project-heading {
+  font-size: 40px;
+}
