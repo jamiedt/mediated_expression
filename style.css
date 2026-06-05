@@ -3,11 +3,11 @@ body {
   display: flex;
   padding: 10px;
   /* adjust padding so that the text has some spacing between the edges of the screen */
-  padding-left: 150px;
-  padding-right: 150px;
+  padding-left: 100px;
+  padding-right: 100px;
   /* gone for a vintage colour palette for fun */
-  background-color: rgb(255, 230, 212);
-  color: rgb(129, 19, 0);
+  background-color: rgb(30, 44, 92);
+  color: rgb(255, 255, 255);
 }
 
 h1 {
@@ -15,15 +15,16 @@ h1 {
   font-weight: 400;
   font-style: normal;
   font-size: 2.5rem;
-  color: black;
+  color: rgb(255, 255, 255);
 }
 
 h3 {
   font-size: 1.3rem;
+  color: rgb(203, 206, 255);
 }
 
 .border {
-  border: 3px, dashed, black;
+  border: 3px, dashed, rgb(255, 255, 255);
   padding: 10px;
   padding-left: 20px;
   padding-right: 20px;
